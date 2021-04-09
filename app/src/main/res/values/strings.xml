@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">shopmax</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sublabel">Click get started to make shipments as fast as possible.</string>
+    <string name="main_label">Make Shipments Smartly</string>
+    <string name="get_started_fab_label">Get Started</string>
+    <string name="home_name_label">John Doe</string>
+    <string name="home_hello_label">Hello👋🏽</string>
+    <string name="track">Track</string>
+</resources>

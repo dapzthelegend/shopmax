@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.shopmax.data.ShipmentResponseShipments" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="40dp"
+        android:elevation="10dp"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/colorWhite"
+            android:layout_height="150dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="100dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="25dp"
+                android:id="@+id/shipment_list_item_status_imageview"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/colorScooter"
+                status="@{model.status}"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.App.CornerRadius"
+                android:src="@drawable/ic_baseline_pending_24"
+                android:layout_height="100dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
+                android:id="@+id/shipment_list_item_name_textview"
+                app:layout_constraintTop_toTopOf="@id/shipment_list_item_status_imageview"
+                app:layout_constraintStart_toEndOf="@id/shipment_list_item_status_imageview"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorTextBlack"
+                android:layout_marginStart="20dp"
+                android:text="@{model.packages.get(0).name}"
+                android:textSize="24sp"
+                android:layout_height="wrap_content"
+                />
+
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="22dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="13dp"
+                app:layout_constraintStart_toEndOf="@id/shipment_list_item_status_imageview"
+                android:id="@+id/shipment_list_item_naira_imageview"
+                app:layout_constraintTop_toBottomOf="@id/shipment_list_item_name_textview"
+
+                android:background="@color/colorWhite"
+                android:src="@drawable/naira"
+                android:layout_height="22dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/home_name_label_textview"
+                app:layout_constraintTop_toBottomOf="@id/shipment_list_item_name_textview"
+                app:layout_constraintStart_toEndOf="@id/shipment_list_item_naira_imageview"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/colorTextBlack"
+                android:text="@{`${model.charges}`}"
+                android:textSize="20sp"
+                android:layout_height="25dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/shipment_list_item_track_textview"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/text_selector_background"
+                android:text="@string/track"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="wrap_content"/>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        
+
+    </androidx.cardview.widget.CardView>
+</layout>
