@@ -20,7 +20,7 @@ class HomeViewModel @Inject constructor(private val shipmentService: ShipmentSer
 
         try {
             viewModelScope.launch {
-                _shipments.value = shipmentService.getShipments()
+              //  _shipments.value = shipmentService.getShipments()
             }
 
         }catch (e:Exception){
